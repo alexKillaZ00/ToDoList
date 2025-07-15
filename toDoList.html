@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        p {
+            color: #666;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        input[type="text"] {
+            width: calc(100% - 140px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        #btnGuardar {
+            padding: 10px 15px;
+            background: #1976d2;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            margin-left: 10px;
+        }
+
+        #btnGuardar:hover {
+            background: #1565c0;
+        }
+
+        #divNotas {
+            margin-top: 30px;
+        }
+
+        h2 {
+            color: #444;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+        }
+
+        ol {
+            list-style: decimal;
+            padding-left: 20px;
+        }
+
+        li {
+            background: #f0f0f0;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .btnEliminar {
+            background: #e53935;
+            color: white;
+            border: none;
+            padding: 6px 10px;
+            border-radius: 6px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .btnEliminar:hover {
+            background: #c62828;
+        }
+
+        .btnEditar {
+            background: #ffa726;
+            color: white;
+            border: none;
+            padding: 6px 10px;
+            border-radius: 6px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .btnEditar:hover {
+            background: #fb8c00;
+        }
+
+
+        #txtSinNotas {
+            color: #999;
+            text-align: center;
+            margin-top: 20px;
+            font-style: italic;
+        }
+
+        .divLi {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            width: 100%;
+        }
+
+        .spanNota {
+            width: 100%;
+            word-break: break-word;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>📝 Mis Notas</h1>
+        <p>Guarda tus ideas y recordatorios en el almacenamiento local.</p>
+
+        <div>
+            <input type="text" id="txtNota" placeholder="Escribe una nota aquí..." maxlength="100" />
+            <button id="btnGuardar">Guardar</button>
+        </div>
+
+        <div id="divNotas">
+            <h2>Notas guardadas</h2>
+            <input type="text" id="txtBuscar" placeholder="Buscar notas..." maxlength="100" />
+            <div id="divListaNotas">
+                <p id="txtSinNotas" style="display: none;">No hay notas para mostrar.</p>
+                <ol id="olNotas">
+                    <!-- Las notas aparecerán aquí -->
+                </ol>
+
+                <div id="paginacion" style="text-align: center; margin-top: 20px;">
+                    <button id="btnAnterior">Anterior</button>
+                    <span id="numPagina">1</span>
+                    <button id="btnSiguiente">Siguiente</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/localStorage/ToDoList.js"></script>
+</body>
+
+</html>
